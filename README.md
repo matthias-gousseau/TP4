@@ -91,19 +91,21 @@ d'enchère automatique). Ajoutez un constructeur approprié.
 10. Ajoutez à la classe `Compte` le code nécessaire afin que cette classe possède une méthode qui :
 prend en paramètres un produit, un prix courant et un prix maximal;
 crée une offre d'enchère et ajoute cette offre à sa liste d'offres d'enchères. Pour vous simplifier la tâche,
-on vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_ comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
+on vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_,
+comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
 
-11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend en paramètre une offre d'enchère,
+11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend comme paramètre une offre d'enchère,
 vérifie si cette offre est valide et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
 
     **Sans modifier les autre classes**, pensez à mettre à jour correctement les valeurs de prix des différentes entités de votre application.
 
-12. Simulez votre application dans le programme principal (la classe `IBaille`). Pour cela, vous instancierez un produit (3 au minimum)
-et plusieurs comptes (3 au minimum). Pour chacun des comptes vous proposerez à l'utilisateur du logiciel (non-informaticien donc)
-de déposer des enchères pour différents produits en affichant les informations sur le produit et l'offre gagnante en cours.
-Vous pouvez effectuer cette simulation par des simples affichages sur la console. Pour récupérer les données saisies par
-l'utilisateur à la console, vous pouvez utiliser la classe `java.util.Scanner` qui permet de "parser" de manière
-intelligente une chaîne de caractères. Voici un petit exemple de ce que vous pouvez faire avec :
+12. Simulez votre application dans le programme principal (la classe `IBaille`). Pour cela, vous instancierez des produits
+(2 au minimum) et plusieurs comptes (3 au minimum). Pour chacun des comptes vous proposerez à l'utilisateur du logiciel
+(non-informaticien donc) de déposer des enchères pour différents produits en affichant les informations sur le produit
+et l'offre gagnante en cours. Vous pouvez effectuer cette simulation par des simples affichages sur la console.
+Pour récupérer les données saisies par l'utilisateur à la console, vous pouvez utiliser la classe `java.util.Scanner`
+qui permet de "parser" de manière intelligente une chaîne de caractères.
+Voici un petit exemple de ce que vous pouvez faire avec :
 
     ```java
     
