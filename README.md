@@ -25,7 +25,7 @@ Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'es
 
 
 ## TP 4 : Systèmes d'enchères
-#### encapsulation, cycle de vie d'une application orientée objets
+#### _Thème : encapsulation, cycle de vie d'une application orientée objets_
 
 Comme d'habitude, cliquez sur le lien ci-dessous pour faire votre fork privé du TP :
 
@@ -90,7 +90,8 @@ d'enchère automatique). Ajoutez un constructeur approprié.
 
 10. Ajoutez à la classe `Compte` le code nécessaire afin que cette classe possède une méthode qui :
 prend en paramètres un produit, un prix courant et un prix maximal;
-crée une offre d'enchère et ajoute cette offre à sa liste d'offres d'enchères.
+crée une offre d'enchère et ajoute cette offre à sa liste d'offres d'enchères. Pour vous simplifier la tâche,
+vn vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_ comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
 
 11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend en paramètre une offre d'enhcère,
 vérifie si cette offre est valide et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
