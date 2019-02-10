@@ -32,18 +32,18 @@ Comme d'habitude, cliquez sur le lien ci-dessous pour faire votre fork privé du
 LIEN GITHUB CLASSROOM À AJOUTER
 
 
-Vous êtes chargé de developper le système d'enchères **iBaille**. Pour avoir une idée globale du système,
+Vous êtes chargé de développer le système d'enchères **iBaille**. Pour avoir une idée globale du système,
 voici le principe général de fonctionnement :
 
 * des produits sont mis en vente avec un prix initial (le prix de base) ;
 * des utilisateurs peuvent enchérir sur les produits pendant une durée déterminée ;
 * pour pouvoir participer les utilisateurs doivent payer un coût de participation (différent pour chaque produit) ;
 * à chaque enchérissement, le prix de base du produit augmente ;
-* à la fin de la vente, l'utilisateur ayant proposé le prix le plus élévé, remporte le produit ;
+* à la fin de la vente, l'utilisateur ayant proposé le prix le plus élevé, remporte le produit ;
 * pour éviter des enchères inutiles (de 1 centime par exemple), le même pas d’enchère minimal est défini pour tous les produits ;
 * lorsqu'un utilisateur _Toto_ propose un prix pour un produit, il propose également un prix maximal qu'il est prêt à débourser
-en cas d'enchère concurrente; ainsi, si un autre uilisateur _Lolo_, fera une enchère supplémentaire, le prix courant du produit
-augmentera automatiquement jusqu'à ce qu'un gagnant soit designé. Par définition, le gagnant est celui dont le prix courant
+en cas d'enchère concurrente; ainsi, si un autre utilisateur _Lolo_, fera une enchère supplémentaire, le prix courant du produit
+augmentera automatiquement jusqu'à ce qu'un gagnant soit désigné. Par définition, le gagnant est celui dont le prix courant
 est supérieur aux prix maximaux proposés par les autres utilisateurs.
 
 **Remarque** : Un utilisateur peut déposer une nouvelle offre d'enchère sur le même produit sur lequel il a déjà déposé une offre d'enchère.
@@ -51,7 +51,7 @@ Par exemple, il pourra le faire si son offre a été "battue" par un un autre en
 
 
 
-1. Implémentez une classe `Produit` avec les attributs suivants : numero, description (un texte), prix courant,
+1. Implémentez une classe `Produit` avec les attributs suivants : numéro, description (un texte), prix courant,
 date de début d'enchère (type `LocalDate` du package `java.time`), heure de début d'enchère (type `LocalTime` du package
  `java.time`), montant du pas d'enchère minimal, coût de participation. Ajoutez un constructeur avec comme paramètres : le numéro,
   la description, le prix courant et le coût de participation.
@@ -61,7 +61,7 @@ Proposez une solution dans votre programme pour satisfaire cette contrainte.
 
     **Remarque** : Ne pas confondre la notion d'_utilisateur du logiciel_ (non-informaticien) et l'_utilisateur-programmeur_
 qui est censé de se servir de votre application pour poursuivre son développement et pour la maintenance, le débuggage etc.
-En général, ici l'utilisateur c'est l'informaticien.
+Ici l'utilisateur c'est l'informaticien.
 
 3. Ajoutez à la classe  `Produit` une méthode `demarrerEnchere(...)` qui rendra l'objet disponible à l'enchère.
 Vous ajouterez à cette classe les autres éléments qui vous paraissent nécessaires pour que cette méthode fonctionne.
@@ -91,9 +91,9 @@ d'enchère automatique). Ajoutez un constructeur approprié.
 10. Ajoutez à la classe `Compte` le code nécessaire afin que cette classe possède une méthode qui :
 prend en paramètres un produit, un prix courant et un prix maximal;
 crée une offre d'enchère et ajoute cette offre à sa liste d'offres d'enchères. Pour vous simplifier la tâche,
-vn vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_ comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
+on vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_ comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
 
-11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend en paramètre une offre d'enhcère,
+11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend en paramètre une offre d'enchère,
 vérifie si cette offre est valide et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
 
     **Sans modifier les autre classes**, pensez à mettre à jour correctement les valeurs de prix des différentes entités de votre application.
@@ -101,22 +101,30 @@ vérifie si cette offre est valide et l'ajoute à la liste d'offres d'enchères 
 12. Simulez votre application dans le programme principal (la classe `IBaille`). Pour cela, vous instancierez un produit (3 au minimum)
 et plusieurs comptes (3 au minimum). Pour chacun des comptes vous proposerez à l'utilisateur du logiciel (non-informaticien donc)
 de déposer des enchères pour différents produits en affichant les informations sur le produit et l'offre gagnante en cours.
-Vous pouvez effectuer cette simulation par des simples affichages sur la console. Pour récupérer les données saisies par l'utilsateur
-à la console, vous pouvez utiliser la classe `java.util.Scanner` qui permet de parser de manière intelligente une chaîne de caractères.
-Voici un petit exemple de ce que vous pouvez faire avec :
+Vous pouvez effectuer cette simulation par des simples affichages sur la console. Pour récupérer les données saisies par
+l'utilisateur à la console, vous pouvez utiliser la classe `java.util.Scanner` qui permet de "parser" de manière
+intelligente une chaîne de caractères. Voici un petit exemple de ce que vous pouvez faire avec :
 
     ```java
     
     import java.util.Scanner;
     
     class IBaille {
+    
         public static void main(String args[]) {
-            Scanner saisie = new Scanner(System.in); // attacher un scanner à la console
-            System.out.println("Veuillez écrire quelque chose :")
-            String réponse = saisie.next(); // récupère la chaîne de caractères saisie par l'utilisateur
-            int entier = saisie.nextInt(); // récupère la chaîne de caractères saisie par l'utilisateur sous forme d'un nombre entier
+        
+            // on attache un objet Scanner au flux d'entrée associée à la console
+            Scanner saisie = new Scanner(System.in);
+            System.out.println("Veuillez écrire quelque chose :");
+        
+            // récupération de la chaîne de caractères saisie par l'utilisateur
+            String réponse = saisie.next();
+        
+            // récupération de la chaîne de caractères saisie par l'utilisateur sous forme d'un nombre entier
+            int entier = saisie.nextInt();
            
         }
+    
     }
     ```
 Pour plus de détails sur cette classe, voir l'API : https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
