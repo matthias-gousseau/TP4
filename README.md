@@ -24,7 +24,8 @@ Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'es
 - Pensez à respecter les conventions de nommage *Java* (vues en [cours](http://pageperso.lif.univ-mrs.fr/~petru.valicov/Cours/M2103/BPOO_Generalites_x4.pdf) ou disponibles sur le site d'Oracle)
 
 
-## TP 4 : *Java* - références, encapsulation
+## TP 4 : Systèmes d'enchères
+#### encapsulation, cycle de vie d'une application orientée objets
 
 Comme d'habitude, cliquez sur le lien ci-dessous pour faire votre fork privé du TP :
 
@@ -57,7 +58,8 @@ date de début d'enchère (type `LocalDate` du package `java.time`), heure de d�
  
 2. Comme indiqué précédemment, le pas d'enchère doit être le même pour tous les produits mais modifiable par l'utilisateur.
 Proposez une solution dans votre programme pour satisfaire cette contrainte.
-**Remarque** : Ne pas confondre la notion d'_utilisateur du logiciel_ (non-informaticien) et l'_utilisateur-programmeur_
+
+    **Remarque** : Ne pas confondre la notion d'_utilisateur du logiciel_ (non-informaticien) et l'_utilisateur-programmeur_
 qui est censé de se servir de votre application pour poursuivre son développement et pour la maintenance, le débuggage etc.
 En général, ici l'utilisateur c'est l'informaticien.
 
