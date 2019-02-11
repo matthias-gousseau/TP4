@@ -36,7 +36,7 @@ Vous êtes chargé de développer le système d'enchères **iBaille**. Pour avoi
 voici le principe général de fonctionnement :
 
 * des produits sont mis en vente avec un prix initial (le prix de base) ;
-* des utilisateurs peuvent enchérir sur les produits pendant une durée déterminée ;
+* des utilisateurs peuvent enchérir sur les produits jusqu'à ce que l'enchère soit arrêtée ;
 * pour pouvoir participer les utilisateurs doivent payer un coût de participation (différent pour chaque produit) ;
 * à chaque enchérissement, le prix de base du produit augmente ;
 * à la fin de la vente, l'utilisateur ayant proposé le prix le plus élevé, remporte le produit ;
@@ -76,11 +76,13 @@ Ajoutez un constructeur approprié.
 5. Ajoutez à la classe `Compte` une méthode qui permet de créditer le compte avec une somme donnée.
 
 6. Implémentez une classe `OffreEnchere` qui représentera une enchère proposée par un utilisateur pour un produit donné.
-Cette classe aura comme attributs : une date, une heure, un prix "_en cours_", et un prix maximal autorisé (en cas
+Cette classe aura entre autres comme attributs : une date, une heure, un prix "_en cours_", et un prix maximal autorisé (en cas
 d'enchère automatique). Ajoutez un constructeur approprié.
 
     **Remarque :** nul besoin de passer la date et l'heure en paramètres
      du constructeur. Vous vous contenterez d'utiliser la date et l'heure courantes.
+     
+    **Remarque :** ici, dans le constructeur, il n'est pas demandé de vérifier que les attributs de l'offre créé sont cohérents avec celles du produit (ce n'est pas la responsabilité de l'objet `OffreEnchere`)
      
 7. Implémentez les méthodes `toString()` pour chacune des 3 classes que vous avez écrites.
 
@@ -98,13 +100,14 @@ comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'
 vérifie si cette offre est __valide__ (en vérifiant le pas d'enchère, le fait que la session d'enchère du produit n'est
 pas arrêtée, etc) et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
 
-    **Sans modifier les autre classes**, pensez à mettre à jour correctement les valeurs de prix des différentes entités de votre application.
+    **Sans modifier les autres classes**, pensez à mettre à jour correctement les valeurs de prix des différentes entités de votre application.
+
+12. Ajoutez à la classe `Produit` une méthode `calculerGagnant()` qui renvoie la meilleure offre d'enchère.
 
 12. Simulez votre application dans le programme principal (la classe `IBaille`). Pour cela, vous instancierez des produits
 (2 au minimum) et plusieurs comptes (3 au minimum). Pour chacun des comptes vous proposerez à l'utilisateur du logiciel
 (non-informaticien donc) de déposer des enchères pour différents produits en affichant les informations sur le produit
-et l'offre gagnante en cours. Vous veillerez à ce que les offres d'enchère ne puisse pas être déposées, une fois que la
-session d'enchère pour le produit en question a été arrêtée. Vous pouvez effectuer cette simulation par des simples
+et l'offre gagnante en cours. Pensez à testez que les offres d'enchère non-valides ne puissent pas être déposées à un `Produit`. Vous pouvez effectuer cette simulation par des simples
 affichages sur la console. Pour récupérer les données saisies par l'utilisateur à la console, vous pouvez utiliser la
 classe `java.util.Scanner` qui permet de "parser" de manière intelligente une chaîne de caractères.
 Voici un petit exemple de ce que vous pouvez faire avec :
