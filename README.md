@@ -95,16 +95,18 @@ on vous conseille d'utiliser une structure de données de type liste prédéfini
 comme `java.util.ArrayList` ou `java.util.LinkedList` (mais vous êtes libres d'utiliser d'autres solutions).
 
 11. Ajoutez à la classe `Produit` une méthode `ajouterOffre(...)`, qui prend comme paramètre une offre d'enchère,
-vérifie si cette offre est valide et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
+vérifie si cette offre est __valide__ (en vérifiant le pas d'enchère, le fait que la session d'enchère du produit n'est
+pas arrêtée, etc) et l'ajoute à la liste d'offres d'enchères de la classe `Produit`.
 
     **Sans modifier les autre classes**, pensez à mettre à jour correctement les valeurs de prix des différentes entités de votre application.
 
 12. Simulez votre application dans le programme principal (la classe `IBaille`). Pour cela, vous instancierez des produits
 (2 au minimum) et plusieurs comptes (3 au minimum). Pour chacun des comptes vous proposerez à l'utilisateur du logiciel
 (non-informaticien donc) de déposer des enchères pour différents produits en affichant les informations sur le produit
-et l'offre gagnante en cours. Vous pouvez effectuer cette simulation par des simples affichages sur la console.
-Pour récupérer les données saisies par l'utilisateur à la console, vous pouvez utiliser la classe `java.util.Scanner`
-qui permet de "parser" de manière intelligente une chaîne de caractères.
+et l'offre gagnante en cours. Vous veillerez à ce que les offres d'enchère ne puisse pas être déposées, une fois que la
+session d'enchère pour le produit en question a été arrêtée. Vous pouvez effectuer cette simulation par des simples
+affichages sur la console. Pour récupérer les données saisies par l'utilisateur à la console, vous pouvez utiliser la
+classe `java.util.Scanner` qui permet de "parser" de manière intelligente une chaîne de caractères.
 Voici un petit exemple de ce que vous pouvez faire avec :
 
     ```java
