@@ -84,11 +84,11 @@ d'enchère automatique). Ajoutez un constructeur approprié.
      
 7. Implémentez les méthodes `toString()` pour chacune des 3 classes que vous avez écrites.
 
-8. Ajoutez dans la classe `OffreEnchere`, des méthodes accesseurs (_setters_) pour le prix et le prix maximal.
+8. Ajoutez dans la classe `OffreEnchere`, des méthodes accesseurs (_getters_) pour le prix et le prix maximal.
 
-9. Ajoutez dans la classe `OffreEnchere`, une méthode modifieur (_getter_) pour le prix.
+9. Ajoutez dans la classe `OffreEnchere`, une méthode modifieur (_setter_) pour le prix.
 
-10. Ajoutez à la classe `Compte` le code nécessaire afin que cette classe possède une méthode qui :
+10. Ajoutez à la classe `Compte` le code nécessaire afin que cette classe possède une méthode `creerOffre(...)`, qui :
 prend en paramètres un produit, un prix courant et un prix maximal;
 crée une offre d'enchère et ajoute cette offre à sa liste d'offres d'enchères. Pour vous simplifier la tâche,
 on vous conseille d'utiliser une structure de données de type liste prédéfinie en _Java_,
